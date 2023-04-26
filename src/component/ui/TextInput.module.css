@@ -1,0 +1,15 @@
+.TextInput{
+    display: flex;
+    width: calc(100% - 32px);
+    height: var(--height);
+    padding: 16px;
+    font-size: 10px;
+    line-height: 20px;
+    color: #C2C2C2;
+
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+
+}

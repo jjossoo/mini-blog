@@ -1,0 +1,107 @@
+/* PostItem */
+.Post_Wrapper{
+    box-sizing: border-box;
+
+    border-radius: 6px;
+    background-color: white;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    
+    width: 150px;
+    height: 101px;
+    padding: 16px;
+    /* margin-left: 8px; */
+
+    float: left;
+    cursor: pointer;
+    overflow: hidden;
+
+    color: #C2C2C2;
+    font-size: 14px;
+    font-weight: 150;
+}
+
+
+.Post_Wrapper:hover{
+    background-color:rgb(232, 232, 232);
+
+    color:#F0848D;
+    font-size: 14px;
+    font-weight: 150;
+}
+
+.Post_Title{
+    /* background-color: white; */
+    color: #C2C2C2;
+    font-size: 14px;
+    font-weight: 150;
+}
+
+.Post_Title:hover{
+    /* background-color:rgb(232, 232, 232); */
+    color:#F0848D;
+    font-size: 14px;
+    font-weight: 150;
+}
+
+/* PostList */
+.PostList_Wrapper{
+    display: flex;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+    align-content: center;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    gap: 24px;
+    flex: 3;
+
+}
+  
+.PostList_Wrapper > *:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+/* CommentItem */
+.Comment_Wrapper{
+    width: calc(100% - 32px);
+    height: 32px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+
+    cursor: pointer;
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    white-space: pre-wrap;
+}
+
+.Comment_Wrapper:hover{
+    background: lightgrey;
+}
+
+/* .Comment_Content{
+    background-color: #FFFFFF;
+    font-size: 12px;
+    white-space: pre-wrap;
+} */
+
+/* CommentList */
+.CommentList_Wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.CommentList_Wrapper > *:not(:last-child) {
+    margin-bottom: 16px;
+}
