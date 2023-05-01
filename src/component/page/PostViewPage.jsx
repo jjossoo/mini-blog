@@ -12,12 +12,16 @@ import Button from '../ui/Button'
 // import data from '../../data.json'
 import { db } from '../../firebase'
 
+import ThemeToggle from '../../ThemeToggle'
+import { useTheme } from '../../context/themeProvider'
+
 Modal.setAppElement('#root'); //모달창 렌더
 
 function PostViewPage(props) {
 
     const nav = useNavigate();
     const postId = useParams().id
+    const [ThemeMode, toggleTheme] = useTheme();
 
     // const post = data.find(function (item) {
     //     return item.id == postId
@@ -56,27 +60,33 @@ function PostViewPage(props) {
 
     return (
         <div className={styles.wrap}>
+
+            <ThemeToggle toggle={toggleTheme} mode={ThemeMode}>
+                DarkMode
+            </ThemeToggle>
+
             <div className={styles.container}>
 
-                <h1>NEW BLOG</h1>
+                {/* <h1>NEW BLOG</h1> */}
 
                 <Button className={style.Button} title="Back" onClick={function (e) {
                     // console.log("메인 페이지로 이동") 
                     nav('/')
                 }} />
 
-                <div>
-                    <Button className={style.Button} title="Delete" onClick={openModal}
+                <div className={style.deleteContainer}>
+                    <Button className={style.deleteButton} title="Delete Post" onClick={openModal}
                     />
 
                     <Modal className={styles.modalContainer}
                         isOpen={isModalOpen}
                         onRequestClose={closeModal}>
 
-                        <h2 className={styles.modalTitle}>정말로 삭제하시겠습니까?</h2>
+                        <h2 className={styles.modalTitle}>글을 삭제하시겠습니까?<br /></h2>
+                        <h3 className={styles.modalsubTitle}>삭제하시면 다시 복구시킬 수 없습니다.<br /></h3>
 
-                        <Button className={styles.cancelButton} title="취소" onClick={closeModal} />
-                        <Button className={styles.yesButton} title="확인" onClick={handleDelete} />
+                        <Button className={style.yesButton} title="확인" onClick={handleDelete} />
+                        <Button className={style.cancelButton} title="취소" onClick={closeModal} />
                     </Modal>
                 </div>
 
@@ -92,27 +102,29 @@ function PostViewPage(props) {
                     comments={post.comments} />
 
                 <TextInput
-                    height={40}
+
+                    height={30}
                     value={comment}
                     onChange={function (e) { setComment(e.target.value) }} />
+                <div className={style.commentContainer}>
+                    <Button
+                        className={style.Button2}
+                        title="Comment-!"
+                        onClick={function () {
+                            let timestamp = new Date().getTime().toString();
+                            let tempComments = post.comments
+                            tempComments.push({
+                                id: (postId + '_' + timestamp),
+                                content: comment
+                            })
 
-                <Button
-                    className={style.Button}
-                    title="Comment-!"
-                    onClick={function () {
-                        let timestamp = new Date().getTime().toString();
-                        let tempComments = post.comments
-                        tempComments.push({
-                            id: (postId + '_' + timestamp),
-                            content: comment
-                        })
-
-                        db.collection('post').doc(postId).update({
-                            comments: tempComments
-                        }).then(function () {
-                            setComment('')
-                        })
-                    }} />
+                            db.collection('post').doc(postId).update({
+                                comments: tempComments
+                            }).then(function () {
+                                setComment('')
+                            })
+                        }} />
+                </div>
             </div>
         </div>
     )
