@@ -5,10 +5,9 @@ import TextInput from '../ui/TextInput'
 import Button from '../ui/Button'
 import { db } from '../../firebase'
 
-function PostWrightPage(props) {
+function PostWritePage(props) {
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
-
     const nav = useNavigate();
 
     return (
@@ -30,20 +29,22 @@ function PostWrightPage(props) {
                 <Button title="Upload-!"
                     onClick={function () {
                         let timestamp = new Date().getTime().toString();
-
+                        let writedate = new Date().toDateString();
                         db.collection('post').doc(timestamp).set({
                             id: timestamp,
                             title: title,
                             content: content,
+                            date: writedate,
                             comments: []
                         }).then(function () {
-                            nav('/')
+                            nav("/")
                         })
                     }} />
+
 
             </div>
         </div>
     )
 }
 
-export default PostWrightPage
+export default PostWritePage

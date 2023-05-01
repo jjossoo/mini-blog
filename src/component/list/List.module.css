@@ -17,32 +17,40 @@
     overflow: hidden;
 
     color: #C2C2C2;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 150;
+
+    display: flex;
+    flex-direction: column;
+    Justify-content: space-between;
+
+    transition: all ease 0.5s;
 }
 
+.Post_Wrapper h3 {
+   margin: 0px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.Post_Wrapper p{
+    color: #C2C2C2;
+    margin: 0px;
+    font-size: 8px;
+    font-weight: 150;
+    vertical-align: bottom;
+    bottom: 0;
+    left: 0;
+    
+}
 
 .Post_Wrapper:hover{
     background-color:rgb(232, 232, 232);
 
     color:#F0848D;
-    font-size: 14px;
-    font-weight: 150;
 }
 
-.Post_Title{
-    /* background-color: white; */
-    color: #C2C2C2;
-    font-size: 14px;
-    font-weight: 150;
-}
-
-.Post_Title:hover{
-    /* background-color:rgb(232, 232, 232); */
-    color:#F0848D;
-    font-size: 14px;
-    font-weight: 150;
-}
 
 /* PostList */
 .PostList_Wrapper{

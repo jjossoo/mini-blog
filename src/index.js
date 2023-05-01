@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PostViewPage from './component/page/PostViewPage';
 import MainPage from './component/page/MainPage';
-import PostWrightPage from './component/page/PostWrightPage';
+import PostWritePage from './component/page/PostWritePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -14,7 +14,7 @@ function App(props) {
       <Routes>
 
         <Route index element={<MainPage />} />
-        <Route path="write" element={<PostWrightPage />} />
+        <Route path="write" element={<PostWritePage />} />
         <Route path="post/:id" element={<PostViewPage />} />
 
       </Routes>

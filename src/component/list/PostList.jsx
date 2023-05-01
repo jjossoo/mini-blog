@@ -15,6 +15,7 @@ function PostList(props) {
             <PostItem 
             key={post.id} 
             title={post.title}
+            date={post.date}
             onClick={function () { 
               // console.log(post.id + '페이지로 이동')
               nav('/post/' + post.id)

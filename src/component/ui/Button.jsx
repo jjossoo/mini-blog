@@ -7,7 +7,7 @@ function Button(props) {
     // onClick: 버튼 클릭시 수행될 함수
 
     return (
-        <button className={styles.Button} onClick={props.onClick}>
+        <button className={props.className} onClick={props.onClick}>
             {props.title || "Button"}
         </button>
     )

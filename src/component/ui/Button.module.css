@@ -23,3 +23,27 @@
     background-color: #FFFFFF;
     color: #F0848D;
 }
+
+.cancelButton{
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.yesButton{
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 10px;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+}
