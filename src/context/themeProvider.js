@@ -4,16 +4,16 @@ import { ThemeProvider as StyledProvider } from 'styled-components';
 
 const ThemeContext = createContext({});
 
-const ThemeProvider = ({children}) => {
+const ThemeProvider = ({ children }) => {
   const LocalTheme = window.localStorage.getItem('theme') || 'light';
   const [ThemeMode, setThemeMode] = useState(LocalTheme);
   const themeObject = ThemeMode === 'light' ? lightTheme : darkTheme;
 
-  return(
+  return (
     <ThemeContext.Provider value={{ ThemeMode, setThemeMode }}>
       <StyledProvider theme={themeObject}>
-        { children }
-      </StyledProvider>      
+        {children}
+      </StyledProvider>
     </ThemeContext.Provider>
   )
 }
@@ -32,8 +32,8 @@ function useTheme() {
       window.localStorage.setItem('theme', 'light');
     };
   }, [ThemeMode]);
-  
-  return [ ThemeMode, toggleTheme];
+
+  return [ThemeMode, toggleTheme];
 }
 
 export { ThemeProvider, useTheme };

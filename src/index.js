@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function App(props) {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={Processi.env.PUBLIC_URL}>
       <ThemeProvider>
         <GlobalStyle />
         <Layout>

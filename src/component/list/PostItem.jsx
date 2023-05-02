@@ -3,7 +3,6 @@ import styles from './List.module.css'
 
 function PostItem(props) {
     // === props ===
-    // title: 글 제목
     // onClick: 클릭시 수행될 함수
 
     return (

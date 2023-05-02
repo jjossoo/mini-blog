@@ -92,7 +92,6 @@ function PostViewPage(props) {
 
                 <div className={styles.Post_Container}>
                     <p className={styles.Title_Text}>{post.title}</p>
-
                     <p className={styles.Content_Text}>{post.content}</p>
                 </div>
 
