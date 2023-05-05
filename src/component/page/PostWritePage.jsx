@@ -7,7 +7,6 @@ import Button from '../ui/Button'
 import { db } from '../../firebase'
 
 import Modal from 'react-modal'
-
 import ThemeToggle from '../../ThemeToggle'
 import { useTheme } from '../../context/themeProvider'
 

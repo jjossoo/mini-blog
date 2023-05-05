@@ -2,16 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import styles from './Page.module.css'
 import style from '../ui/Button.module.css'
-// 그냥 겹치지 않게 임포트한거임
-
+// 그냥 겹치지 않게 임포트한것
 import Modal from 'react-modal'
-
 import TextInput from '../ui/TextInput'
 import CommentList from '../list/CommentList'
 import Button from '../ui/Button'
 // import data from '../../data.json'
 import { db } from '../../firebase'
-
 import ThemeToggle from '../../ThemeToggle'
 import { useTheme } from '../../context/themeProvider'
 
@@ -34,9 +31,12 @@ function PostViewPage(props) {
         comments: [],
     }) // 초기값 넣기
 
+    const [commentCount, setCommentCount] = useState(0);
+
     useEffect(function () {
         db.collection('post').doc(postId).get().then(function (doc) {
             setPost(doc.data()) //읽은 내용으로 state 변경
+            setCommentCount(doc.data().comments.length)
         })
     }, [postId]) // function 옆에 빈 배열을 넣어야지 계속 돌지 않음 - 현재페이지랑은 상관없는 필기
 
@@ -74,47 +74,36 @@ function PostViewPage(props) {
                     nav('/')
                 }} />
 
-                <div className={style.deleteContainer}>
-                    <Button className={style.deleteButton} title="Delete Post" onClick={openModal}
-                    />
-
-                    <Modal className={styles.modalContainer}
-                        isOpen={isModalOpen}
-                        onRequestClose={closeModal}>
-
-                        <h2 className={styles.modalTitle}>글을 삭제하시겠습니까?<br /></h2>
-                        <h3 className={styles.modalsubTitle}>삭제하시면 다시 복구시킬 수 없습니다.<br /></h3>
-
-                        <Button className={style.yesButton} title="확인" onClick={handleDelete} />
-                        <Button className={style.cancelButton} title="취소" onClick={closeModal} />
-                    </Modal>
-                </div>
-
                 <div className={styles.Post_Container}>
                     <p className={styles.Title_Text}>{post.title}</p>
                     <p className={styles.Content_Text}>{post.content}</p>
                 </div>
 
-                <p className={styles.Comment_Label}>All comments</p>
+                <div className={styles.commentContainer}>
 
-                <CommentList
-                    comments={post.comments} />
+                    <p className={styles.Comment_Label}>Comments:{post.comments.length}</p>
 
-                <TextInput
+                    <CommentList
+                        comments={post.comments} />
 
-                    height={30}
-                    value={comment}
-                    onChange={function (e) { setComment(e.target.value) }} />
-                <div className={style.commentContainer}>
+                    <TextInput
+                        height={30}
+                        value={comment}
+                        onChange={function (e) { setComment(e.target.value) }} />
+                </div>
+
+                <div className={style.commentbtContainer}>
                     <Button
                         className={style.Button2}
                         title="Comment-!"
                         onClick={function () {
                             let timestamp = new Date().getTime().toString();
+
                             let tempComments = post.comments
                             tempComments.push({
                                 id: (postId + '_' + timestamp),
                                 content: comment
+
                             })
 
                             db.collection('post').doc(postId).update({
@@ -122,8 +111,27 @@ function PostViewPage(props) {
                             }).then(function () {
                                 setComment('')
                             })
+
+
                         }} />
                 </div>
+
+            </div>
+            <div className={style.deleteContainer}>
+                <Button className={style.deleteButton}
+                    title="Delete Post"
+                    onClick={openModal} />
+
+                <Modal className={styles.modalContainer}
+                    isOpen={isModalOpen}
+                    onRequestClose={closeModal}>
+
+                    <h2 className={styles.modalTitle}>글을 삭제하시겠습니까?<br /></h2>
+                    <h3 className={styles.modalsubTitle}>삭제하시면 다시 복구시킬 수 없습니다.<br /></h3>
+
+                    <Button className={style.yesButton} title="확인" onClick={handleDelete} />
+                    <Button className={style.cancelButton} title="취소" onClick={closeModal} />
+                </Modal>
             </div>
         </div>
     )

@@ -29,27 +29,27 @@ function MainPage(props) {
     }, [])
 
     return (
-       
-            <>
-                <ThemeToggle toggle={toggleTheme} mode={ThemeMode}>
-                    DarkMode
-                </ThemeToggle>
 
-                <div className={styles.wrap}>
-                    <div className={styles.container}>
+        <>
+            <ThemeToggle toggle={toggleTheme} mode={ThemeMode}>
+                DarkMode
+            </ThemeToggle>
 
-                        {/* <h1>NEW BLOG</h1> */}
+            <div className={styles.wrap}>
+                <div className={styles.container}>
 
-                        <Button className={style.Button} title="글 작성하기" onClick={function () {
-                            // console.log("글 작성 페이지로 이동")
-                            nav("/write")
-                        }} />
+                    {/* <h1>NEW BLOG</h1> */}
 
-                        <PostList posts={data} onClick={function (id) { console.log(id + "글 작성 페이지로 이동") }} />
+                    <Button className={style.Button} title="글 작성하기" onClick={function () {
+                        // console.log("글 작성 페이지로 이동")
+                        nav("/write")
+                    }} />
 
-                    </div>
+                    <PostList posts={data} onClick={function (id) { console.log(id + "글 작성 페이지로 이동") }} />
+
                 </div>
-            </>
+            </div>
+        </>
     )
 }
 

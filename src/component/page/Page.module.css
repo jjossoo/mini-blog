@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+}
 html{
     /* background-color: #FCFCF7; */
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .wrap{
@@ -16,6 +21,12 @@ html{
 .container{
     width: 100%;
     max-width: 500px;
+    padding: 8px 16px;
+    /* background: #FFFFFF; */
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    margin-bottom: 20px;
 }
 
 .Page_Wrapper{
@@ -38,34 +49,39 @@ html{
 
 .Post_Container{
     padding: 8px 16px;
-    /* background: #FFFFFF; */
+    /* background: #FFFFFF;
     border: 1px solid #FFFFFF;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; */
 }
 
 .Title_Text{
     /* background: #FFFFFF; */
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 500;
-    line-height: 4;
+    line-height: 2;
+    
 }
 
 .Content_Text{
     /* background: #FFFFFF; */
     font-size: 16px;
-    line-height: 32px;
+    font-weight: 300;
     line-height: 2;
     white-space: pre-wrap;
+}
+.commentContainer{
+    padding: 8px 16px;
 }
 
 .Comment_Label{
     font-style: italic;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 150%;
     color: #F0848D;
+    margin-bottom: 10px;
 }
 
 h1{
@@ -74,6 +90,7 @@ h1{
     font-weight: 800;
     font-size: 32px;
     line-height: 150%;
+  
 }
 
 h2{

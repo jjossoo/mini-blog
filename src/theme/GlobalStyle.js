@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
 		background : ${({theme}) => theme.bgColor};
         color: ${({theme}) => theme.textColor};
         margin: 0;
-        font-family: 'Courier New', Courier, monospace;
+		font-family: 'Noto Sans KR', sans-serif;
 	}
 	h1{
 		// color: #F0848D;
@@ -15,5 +15,6 @@ export const GlobalStyle = createGlobalStyle`
 		font-weight: 600;
 		font-size: 18px;
 		line-height: 150%;
+		margin-bottom: 10px;
 	}
 `

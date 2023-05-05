@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
 /* PostItem */
 .Post_Wrapper{
     box-sizing: border-box;
-
     border-radius: 6px;
-    /* background-color: white; */
-    border: 1px solid #FFFFFF;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    
+    border: 1px solid #FFFF;;
     width: 150px;
     height: 101px;
     padding: 16px;
@@ -16,7 +18,7 @@
     cursor: pointer;
     overflow: hidden;
 
-    color: #C2C2C2;
+    color: #a7a7a7;
     font-size: 12px;
     /* font-weight: 150; */
 
@@ -47,11 +49,9 @@
 }
 
 .Post_Wrapper:hover{
-    background-color:rgb(232, 232, 232);
-
+    background-color:rgb(233, 233, 233);
     color:#F0848D;
 }
-
 
 /* PostList */
 .PostList_Wrapper{
@@ -74,22 +74,19 @@
 /* CommentItem */
 .Comment_Wrapper{
     /* width: calc(100% - 32px); */
-    height: 28px;
-    padding: 8px 12px;
+    /* height: 28px; */
+    padding: 12px 12px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-
-    /* background: #FFFFFF; */
-    border: 1px solid #FFFFFF;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #F0848D;;
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
     border-radius: 6px;
-
     cursor: pointer;
     margin-bottom: 8px;
-
     font-size: 12px;
+    line-height: 1.2;
     white-space: pre-wrap;
 }
 

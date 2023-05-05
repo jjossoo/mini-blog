@@ -8,6 +8,7 @@ function TextInput(props) {
     // onChange: 변경시 실행될 이벤트함수
 
     return (
+        
         <textarea className={styles.TextInput}
             style={{ '--height': props.height + 'px' }}
             height={props.height}

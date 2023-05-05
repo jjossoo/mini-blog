@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+
 *{
-    font-family: 'Courier';
-    border-radius: 5px;
-    
+    font-family: 'Noto Sans KR', sans-serif;
+
 }
+
 .Button {
     color:white;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 10px;
     line-height: 150%;
     cursor: pointer;
-
+    border-radius: 5px;
     padding: 4px 13px;
     gap: 10px;
     background: #F0848D;
@@ -27,11 +29,11 @@
 .Button2 {
     color:white;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 10px;
     line-height: 150%;
     cursor: pointer;
-
+    border-radius: 5px;
     padding: 4px 13px;
     gap: 10px;
     background: #F0848D;
@@ -39,30 +41,33 @@
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
    
     margin-top: 14px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     
     display: inline-block; 
     margin-left: auto;
 }
+
 .Button:hover{
     background-color: #FFFFFF;
     color: #F0848D;
 }
 
-.deleteButton{
+.Button2:hover{
+    background-color: #FFFFFF;
+    color: #F0848D;
+}
 
-    font-weight: 400;
+.deleteButton{
+    font-weight: 600;
     font-size: 10px;
     border: 1px solid #FFFFFF;
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
-
     padding: 4px 13px;
     gap: 10px;
-
     display: inline-block; 
     margin-left: auto;
     margin-bottom: 20px;
-
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -72,8 +77,9 @@
 .uploadContainer{
     display: flex;
 }
-.commentContainer{
+.commentbtContainer{
     display: flex;
+    padding: 8px 16px;
 }
 
 .cancelButton{
@@ -86,6 +92,7 @@
     margin-left: 10px;
     padding: 10px 42px;
     transition: all 0.3s ease-in-out;
+    
 }
 
 .yesButton{
